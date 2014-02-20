@@ -1,4 +1,0 @@
-vim-dot-files
-=============
-
-vimdotfiles
