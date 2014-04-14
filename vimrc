@@ -25,6 +25,7 @@ filetype indent on          "Syntax Highlight
 filetype plugin on          "Needed for snipMate
 set autoindent              "Autoindent
 set expandtab               "Use spaces instead of tabs
+set so=999
 "Ignore these files when completing names
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,node_modules/*
 
