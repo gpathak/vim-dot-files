@@ -9,14 +9,17 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 "------  Visual Options  ------
 set guioptions=egmt         "remove toolbar, scrollbars
 syntax on                   "Enables syntax highlighting
-set nu                      "Enable Line Numbers
+set nu                      "Enable Line Number
 set nowrap                  "Disable word wrap
 set vb                      "Visual bell instead of beeps
 set ruler                   "Displays cursor position on bottom right of screen
 set laststatus=2            "always show the status line"
-set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
-"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]{fugitive#statusline()}   
+"set statusline=%<%f\ %h%m%r%=%{fugitive#statusline()}\ \ %-14.(%l,%c%V%)\ %P
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]{fugitive#statusline()}   
 
+"------  PowerLine   ------
+set encoding=utf-8
+let g:Powerline_symbols= 'unicode'
 "------  Behavior  ------
 set tabstop=4               "tab = 4 spaces
 set shiftwidth=4            "Indent to four spaces
@@ -82,6 +85,16 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Closes the current window
 nnoremap <silent> <Leader>Q <C-w>c
+
+"------  Syntactic options  ------ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 "------  Fugitive  ------ 
 "https://github.com/tpope/vim-fugitive
